@@ -8,11 +8,9 @@ _해당 PR에 대한 작업 내용을 요약하여 작성해주세요._
 
 - _해당 PR에 수행한 작업을 작성해주세요._
 
-
-## Description
+## 📝 Description
 
 - _해당 PR에 대한 설멍을 작성해주세요._
-
 
 ## 📸 Screenshot
 
