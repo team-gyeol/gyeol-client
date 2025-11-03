@@ -1,8 +1,8 @@
-language: "ko-KR"
+language: ko-KR
 early_access: false
 
 reviews:
-  profile: "chill"
+  profile: chill
   request_changes_workflow: false
   poem: true
   review_status: true
