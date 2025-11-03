@@ -1,5 +1,5 @@
 const App = () => {
-  return <div>gyeol-client</div>;
+  return <div>hi</div>;
 };
 
 export default App;
