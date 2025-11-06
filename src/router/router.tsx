@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter } from 'react-router-dom';
 
 import GlobalLayout from './gloabl-layout';
 import { routePath } from './path';
