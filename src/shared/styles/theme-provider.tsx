@@ -14,6 +14,8 @@ export default function ThemeProvider({
   className?: string;
 }) {
   return (
-    <div className={`${theme ?? themeClass} ${className}`}>{children}</div>
+    <div className={`${theme ?? themeClass} ${className ?? ''}`}>
+      {children}
+    </div>
   );
 }
