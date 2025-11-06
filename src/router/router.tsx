@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import GlobalLayout from './gloabl-layout';
+import GlobalLayout from './global-layout';
 import { routePath } from './path';
 import { globalRoutes } from './routes/global-routes';
 
