@@ -1,4 +1,4 @@
-import { typography } from './typography.css';
+import { typography } from "./typography.css";
 
 export const fontStyles = {
   //Heavy

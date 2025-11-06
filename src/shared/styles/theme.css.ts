@@ -1,11 +1,11 @@
-import { createTheme } from '@vanilla-extract/css';
-import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
+import { createTheme } from "@vanilla-extract/css";
+import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
 
-import { width } from './width';
+import { width } from "./width";
 
-import { color } from './token/color.css';
-import { fontStyles } from './token/font-style.css';
-import { typography } from './token/typography.css';
+import { color } from "./token/color.css";
+import { fontStyles } from "./token/font-style.css";
+import { typography } from "./token/typography.css";
 
 const tokens = {
   color: color,

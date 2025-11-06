@@ -1,5 +1,5 @@
-import { HomePage } from '../lazy';
-import { routePath } from '../path';
+import { HomePage } from "../lazy";
+import { routePath } from "../path";
 
 export const globalRoutes = [
   {

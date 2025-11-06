@@ -1,4 +1,4 @@
-import { HomePage } from '@router/lazy';
+import { HomePage } from "@router/lazy";
 
 const App = () => {
   return (
