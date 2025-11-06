@@ -21,11 +21,11 @@ export const fontStyles = {
 
   // Extra Bold
   title_eb_25: {
-    fonnSize: typography.fontSize[25],
+    fontSize: typography.fontSize[25],
     fontWeight: typography.fontWeight.extrabold,
   },
   title_eb_30: {
-    fonnSize: typography.fontSize[30],
+    fontSize: typography.fontSize[30],
     fontWeight: typography.fontWeight.extrabold,
   },
 
