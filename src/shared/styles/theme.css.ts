@@ -1,10 +1,11 @@
 import { createTheme } from '@vanilla-extract/css';
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
+import { width } from './width';
+
 import { color } from './token/color.css';
 import { fontStyles } from './token/font-style.css';
 import { typography } from './token/typography.css';
-import { width } from './width';
 
 const tokens = {
   color: color,

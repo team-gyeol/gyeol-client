@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 
 import './reset.css.ts';
 import './global.css.ts';
+
 import { themeClass } from './theme.css';
 
 export default function ThemeProvider({
