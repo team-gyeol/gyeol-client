@@ -5,5 +5,9 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tsconfigPaths(), vanillaExtractPlugin()],
+  plugins: [
+    react(),
+    tsconfigPaths({ projects: ['tsconfig.app.json'] }),
+    vanillaExtractPlugin(),
+  ],
 });
