@@ -1,8 +1,9 @@
-import { type ReactNode } from 'react';
+import { type ReactNode } from "react";
 
-import './reset.css.ts';
-import './global.css.ts';
-import { themeClass } from './theme.css';
+import "./reset.css.ts";
+import "./global.css.ts";
+
+import { themeClass } from "./theme.css";
 
 export default function ThemeProvider({
   theme,
@@ -14,7 +15,7 @@ export default function ThemeProvider({
   className?: string;
 }) {
   return (
-    <div className={`${theme ?? themeClass} ${className ?? ''}`}>
+    <div className={`${theme ?? themeClass} ${className ?? ""}`}>
       {children}
     </div>
   );
