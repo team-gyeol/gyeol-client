@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { routePath } from "@router/path";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 import Layout from "@shared/components/layout/layout";
 

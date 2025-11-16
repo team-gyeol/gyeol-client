@@ -6,7 +6,7 @@ import { fontStyles } from "@shared/styles/token/font-style.css";
 export const teamContainer = style({
   backgroundColor: color.black100,
   color: color.white100,
-  padding: "0 6rem",
+  padding: "0 6rem 3rem 6rem",
 });
 
 export const infoContainer = style({
