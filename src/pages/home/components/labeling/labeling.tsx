@@ -4,7 +4,7 @@ import * as styles from "./laneling.css";
 
 const Labeling = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <section className={styles.container} ref={ref}>
+    <section id="about" className={styles.container} ref={ref}>
       <div>
         <p className={styles.text}>섬세한 라벨링으로</p>
         <p className={styles.text}>부품 분류를 정확하게</p>

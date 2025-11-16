@@ -4,7 +4,7 @@ import * as styles from "./team.css";
 
 const Team = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <section className={styles.teamContainer} ref={ref}>
+    <section id="team" className={styles.teamContainer} ref={ref}>
       <div className={styles.infoContainer}>
         <img src="/inyong.png" className={styles.image} />
         <div className={styles.textContainer}>

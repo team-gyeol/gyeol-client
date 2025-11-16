@@ -2,7 +2,7 @@ import * as styles from "./footer.css";
 
 const Footer = () => {
   return (
-    <div className={styles.footerContainer}>
+    <div id="introduce" className={styles.footerContainer}>
       <div className={styles.topContainer}>
         <div className={styles.divideContainer}>
           <div className={styles.sectionContainer}>

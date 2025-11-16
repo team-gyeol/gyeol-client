@@ -13,6 +13,7 @@ const Header = ({ darkMode }: HeaderProps) => {
   const handleNavigate = (path: string) => {
     navigate(path);
   };
+
   return (
     <header className={styles.headerContainer({ darkMode })}>
       <div className={styles.textContainer}>
@@ -22,9 +23,15 @@ const Header = ({ darkMode }: HeaderProps) => {
         >
           LOGO
         </button>
-        <button className={styles.text}>ABOUT</button>
-        <button className={styles.text}>TEAM</button>
-        <button className={styles.text}>INTRODUCE</button>
+        <a href="#about" className={styles.text}>
+          ABOUT
+        </a>
+        <a href="#team" className={styles.text}>
+          TEAM
+        </a>
+        <a href="#introduce" className={styles.text}>
+          INTRODUCE
+        </a>
       </div>
       <button
         className={styles.text}
