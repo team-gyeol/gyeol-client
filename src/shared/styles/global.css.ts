@@ -32,6 +32,6 @@ export const rootStyle = style({
   margin: "0 auto",
   minHeight: "100vh",
   width: "var(--width)",
-  backgroundColor: themeVars.color.bg_white100,
-  color: themeVars.color.gray900,
+  backgroundColor: themeVars.color.white100,
+  color: themeVars.color.black300,
 });

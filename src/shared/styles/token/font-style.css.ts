@@ -14,6 +14,10 @@ export const fontStyles = {
     fontSize: typography.fontSize[35],
     fontWeight: typography.fontWeight.heavy,
   },
+  head_hv_30: {
+    fontSize: typography.fontSize[30],
+    fontWeight: typography.fontWeight.heavy,
+  },
   head_hv_20: {
     fontSize: typography.fontSize[20],
     fontWeight: typography.fontWeight.heavy,
@@ -68,6 +72,10 @@ export const fontStyles = {
   },
   section_r_16: {
     fontSize: typography.fontSize[16],
+    fontWeight: typography.fontWeight.regular,
+  },
+  section_r_20: {
+    fontSize: typography.fontSize[20],
     fontWeight: typography.fontWeight.regular,
   },
 };
