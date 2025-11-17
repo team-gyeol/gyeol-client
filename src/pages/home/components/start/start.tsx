@@ -6,7 +6,7 @@ interface StartProps {
 
 const Start = ({ onClick }: StartProps) => {
   return (
-    <section className={styles.container}>
+    <section id="start" className={styles.container}>
       <div className={styles.introduceContainer}>
         <div>
           <p className={styles.infoText}>wellcome to gyeol</p>

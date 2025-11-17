@@ -1,8 +1,10 @@
+import { forwardRef } from "react";
+
 import * as styles from "./footer.css";
 
-const Footer = () => {
+const Footer = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <div id="introduce" className={styles.footerContainer}>
+    <div id="introduce" className={styles.footerContainer} ref={ref}>
       <div className={styles.topContainer}>
         <div className={styles.divideContainer}>
           <div className={styles.sectionContainer}>
@@ -40,6 +42,6 @@ const Footer = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Footer;

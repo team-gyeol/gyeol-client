@@ -17,12 +17,13 @@ const Header = ({ darkMode }: HeaderProps) => {
   return (
     <header className={styles.headerContainer({ darkMode })}>
       <div className={styles.textContainer}>
-        <button
+        <a
+          href="#start"
           className={styles.text}
           onClick={() => handleNavigate(routePath.ROOT)}
         >
           LOGO
-        </button>
+        </a>
         <a href="#about" className={styles.text}>
           ABOUT
         </a>
