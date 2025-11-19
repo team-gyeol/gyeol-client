@@ -3,4 +3,5 @@ export const END_POINT = {
   MY: "api/mypage",
   IMAGE: "api/mypage/image",
   IMAGE_ANALYZE: "api/images/analyze",
+  IMAGE_LIST: "api/mypage/images",
 };

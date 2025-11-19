@@ -1,7 +1,9 @@
+import { useState } from "react";
+
 import { useGetUser } from "@shared/apis/domain/my";
 import Layout from "@shared/components/layout/layout";
 
-import Aside from "./components/aside/aside";
+import Aside, { ID, type SelectedId } from "./components/aside/aside";
 import HistoryList from "./components/history-list/history-list";
 import Info from "./components/info/info";
 
@@ -9,18 +11,24 @@ import * as styles from "./my.css";
 
 const My = () => {
   const { data: userData } = useGetUser();
+  const [selectedId, setSelectedId] = useState<SelectedId>(ID.MY_INFO);
 
   return (
     <Layout>
       <div className={styles.myAllContainer}>
-        <Aside />
+        <Aside selectedId={selectedId} onSelect={setSelectedId} />
         <div className={styles.infoHistoryContainer}>
-          <Info
-            name={userData.userName}
-            email={userData.userEmail}
-            droneNumber={23}
-          />
-          <HistoryList />
+          {selectedId === ID.MY_INFO && (
+            <Info
+              name={userData.userName}
+              email={userData.userEmail}
+              droneNumber={23}
+            />
+          )}
+          {selectedId === ID.DRONE_HISTORY && <HistoryList />}
+          {selectedId === ID.INFO_PATCH && (
+            <div>정보 수정 페이지 (구현 예정)</div>
+          )}
         </div>
       </div>
     </Layout>
