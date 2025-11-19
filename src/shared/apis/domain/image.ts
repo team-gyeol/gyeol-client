@@ -74,3 +74,18 @@ export const useGetImageList = (params: ImageListParams = {}) => {
     queryFn: () => getImageList(params),
   });
 };
+
+/**
+ *
+ * 분석 이미지 삭제
+ */
+const deleteImage = async (imageId: number): Promise<void> => {
+  await instance.delete(`${END_POINT.IMAGE_DELETE}/${imageId}`);
+};
+
+export const useDeleteImage = () => {
+  return useMutation({
+    mutationKey: [queryKey.DELETE_IMAGE],
+    mutationFn: deleteImage,
+  });
+};

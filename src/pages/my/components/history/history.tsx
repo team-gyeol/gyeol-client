@@ -6,6 +6,7 @@ interface HistoryProps {
   description: string;
   imageUrl?: string;
   onClick?: () => void;
+  onDelete?: (e: React.MouseEvent) => void;
 }
 
 const History = ({
@@ -14,7 +15,15 @@ const History = ({
   description,
   imageUrl,
   onClick,
+  onDelete,
 }: HistoryProps) => {
+  const handleDeleteClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onDelete) {
+      onDelete(e);
+    }
+  };
+
   return (
     <li
       className={styles.historyContainer({ isClickable: !!onClick })}
@@ -31,6 +40,15 @@ const History = ({
       </div>
       <div className={styles.rightContainer}>
         <p className={styles.text}>{date}</p>
+        {onDelete && (
+          <button
+            className={styles.deleteButton}
+            onClick={handleDeleteClick}
+            aria-label="삭제"
+          >
+            삭제
+          </button>
+        )}
       </div>
     </li>
   );

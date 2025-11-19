@@ -74,6 +74,23 @@ export const text = style({
 export const rightContainer = style({
   display: "flex",
   alignItems: "center",
+  gap: "1.5rem",
   color: color.gray100,
   fontSize: "1.2rem",
+});
+
+export const deleteButton = style({
+  padding: "0.5rem 1rem",
+  backgroundColor: "transparent",
+  color: color.error_red,
+  border: `1px solid ${color.error_red}`,
+  borderRadius: "4px",
+  fontSize: "1.2rem",
+  fontWeight: "500",
+  cursor: "pointer",
+  transition: "all 0.2s",
+  ":hover": {
+    backgroundColor: color.error_red,
+    color: color.white100,
+  },
 });

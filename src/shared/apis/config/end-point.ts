@@ -4,4 +4,5 @@ export const END_POINT = {
   IMAGE: "api/mypage/image",
   IMAGE_ANALYZE: "api/images/analyze",
   IMAGE_LIST: "api/mypage/images",
+  IMAGE_DELETE: "api/mypage/image",
 };
