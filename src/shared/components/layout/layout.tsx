@@ -4,7 +4,7 @@ import Footer from "./footer/footer";
 import Header from "./header/header";
 
 interface LayoutProps {
-  darkHeader: boolean;
+  darkHeader?: boolean;
   children: ReactNode;
   footerRef?: Ref<HTMLDivElement>;
 }
@@ -12,7 +12,9 @@ interface LayoutProps {
 const Layout = ({ children, darkHeader, footerRef }: LayoutProps) => {
   return (
     <>
-      <Header darkMode={darkHeader} />
+      <div style={{ height: "8rem" }}>
+        <Header darkMode={darkHeader} />
+      </div>
       {children}
       <Footer ref={footerRef} />
     </>
