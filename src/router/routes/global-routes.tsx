@@ -1,4 +1,4 @@
-import { HomePage, LoginPage, UploadPage } from "../lazy";
+import { HomePage, LoginPage, MyPage, UploadPage } from "../lazy";
 import { routePath } from "../path";
 
 export const globalRoutes = [
@@ -13,5 +13,9 @@ export const globalRoutes = [
   {
     path: routePath.UPLOAD,
     element: <UploadPage />,
+  },
+  {
+    path: routePath.MY,
+    element: <MyPage />,
   },
 ];
