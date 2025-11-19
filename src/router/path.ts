@@ -3,6 +3,7 @@ export const routePath = {
   ROOT: "/",
   LOGIN: "/auth/login",
   UPLOAD: "/upload",
+  MY: "/my",
 } as const;
 
 export type Routes = (typeof routePath)[keyof typeof routePath];

@@ -7,6 +7,7 @@ export const footerContainer = style({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
+  width: "100vw",
   height: "45rem",
   padding: "7rem 12rem 3rem 12rem",
   backgroundColor: color.black300,

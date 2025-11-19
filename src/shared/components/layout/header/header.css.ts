@@ -15,6 +15,7 @@ export const headerContainer = recipe({
     width: "100%",
     height: "8rem",
     padding: "0 6rem",
+    backgroundColor: color.white100,
   },
   variants: {
     darkMode: {

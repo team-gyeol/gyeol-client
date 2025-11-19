@@ -7,6 +7,7 @@ export const teamContainer = style({
   backgroundColor: color.black100,
   color: color.white100,
   padding: "0 6rem 3rem 6rem",
+  scrollMarginTop: "8rem",
 });
 
 export const infoContainer = style({

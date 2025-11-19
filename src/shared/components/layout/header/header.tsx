@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import * as styles from "./header.css";
 
 interface HeaderProps {
-  darkMode: boolean;
+  darkMode?: boolean;
 }
 
 const Header = ({ darkMode }: HeaderProps) => {

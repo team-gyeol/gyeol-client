@@ -5,10 +5,11 @@ import { fontStyles } from "@shared/styles/token/font-style.css";
 
 export const container = style({
   height: "100vh",
+  scrollMarginTop: "8rem",
 });
 
 export const introduceContainer = style({
-  height: "60%",
+  height: "50%",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -37,7 +38,7 @@ export const startContainer = style({
   justifyContent: "center",
   alignItems: "center",
   gap: "5rem",
-  height: "40%",
+  height: "50%",
   backgroundColor: color.black100,
   color: color.white100,
 });
