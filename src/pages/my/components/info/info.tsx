@@ -4,11 +4,11 @@ import * as styles from "./info.css";
 
 interface InfoProps {
   name: string;
-  company: string;
+  email: string;
   droneNumber: number;
 }
 
-const Info = ({ name, company, droneNumber }: InfoProps) => {
+const Info = ({ name, email, droneNumber }: InfoProps) => {
   return (
     <div>
       <TitleBar>MY_PAGE</TitleBar>
@@ -17,7 +17,7 @@ const Info = ({ name, company, droneNumber }: InfoProps) => {
           <img className={styles.image} src="/test_profile.png" />
           <div className={styles.titleContentsContainer}>
             <p className={styles.contents}>이름: {name}</p>
-            <p className={styles.contents}>회사: {company}</p>
+            <p className={styles.contents}>이메일: {email}</p>
           </div>
         </div>
 

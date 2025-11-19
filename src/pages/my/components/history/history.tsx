@@ -17,9 +17,8 @@ const History = ({
 }: HistoryProps) => {
   return (
     <li
-      className={styles.historyContainer}
+      className={styles.historyContainer({ isClickable: !!onClick })}
       onClick={onClick}
-      style={{ cursor: onClick ? "pointer" : "default" }}
     >
       <div className={styles.leftContentsContiner}>
         {imageUrl && (

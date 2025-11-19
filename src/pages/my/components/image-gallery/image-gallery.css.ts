@@ -1,13 +1,16 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
+import { color } from "@shared/styles/token/color.css";
+
 export const overlay = style({
   position: "fixed",
   top: 0,
   left: 0,
   right: 0,
   bottom: 0,
-  backgroundColor: "rgba(0, 0, 0, 0.9)",
+  backgroundColor: color.black300,
+  opacity: 0.9,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -31,7 +34,7 @@ export const closeButton = style({
   right: 0,
   background: "none",
   border: "none",
-  color: "#FFFFFF",
+  color: color.white100,
   fontSize: "3rem",
   cursor: "pointer",
   padding: "0.5rem",
@@ -57,6 +60,7 @@ export const mainImage = style({
   maxHeight: "60vh",
   objectFit: "contain",
   borderRadius: "8px",
+  border: `1px solid ${color.border100}`,
 });
 
 export const segmentedImage = style({
@@ -64,15 +68,17 @@ export const segmentedImage = style({
   maxHeight: "60vh",
   objectFit: "contain",
   borderRadius: "8px",
+  border: `1px solid ${color.border100}`,
 });
 
 export const navButton = style({
   position: "absolute",
   top: "50%",
   transform: "translateY(-50%)",
-  background: "rgba(255, 255, 255, 0.2)",
+  background: color.white100,
+  opacity: 0.2,
   border: "none",
-  color: "#FFFFFF",
+  color: color.white100,
   fontSize: "3rem",
   width: "3rem",
   height: "3rem",
@@ -83,7 +89,8 @@ export const navButton = style({
   justifyContent: "center",
   zIndex: 1002,
   ":hover": {
-    backgroundColor: "rgba(255, 255, 255, 0.3)",
+    backgroundColor: color.white100,
+    opacity: 0.3,
   },
 });
 
@@ -91,22 +98,25 @@ export const infoContainer = style({
   display: "flex",
   flexDirection: "column",
   gap: "0.5rem",
-  color: "#FFFFFF",
+  color: color.white100,
   textAlign: "center",
 });
 
 export const analysisText = style({
   fontSize: "1.2rem",
   fontWeight: "500",
+  color: color.white100,
 });
 
 export const dateText = style({
   fontSize: "1rem",
+  color: color.white100,
   opacity: 0.7,
 });
 
 export const imageCounter = style({
   fontSize: "0.9rem",
+  color: color.white100,
   opacity: 0.7,
 });
 
@@ -125,7 +135,7 @@ export const thumbnail = recipe({
     objectFit: "cover",
     borderRadius: "4px",
     cursor: "pointer",
-    border: "2px solid transparent",
+    border: `2px solid ${color.border100}`,
     opacity: 0.6,
     transition: "all 0.2s",
     ":hover": {
@@ -135,10 +145,9 @@ export const thumbnail = recipe({
   variants: {
     isActive: {
       true: {
-        borderColor: "#FFFFFF",
+        borderColor: color.white100,
         opacity: 1,
       },
     },
   },
 });
-
