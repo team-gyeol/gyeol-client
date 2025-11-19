@@ -1,0 +1,13 @@
+export interface ImageAnalyzeRequest {
+  image: File;
+}
+
+export interface ImageAnalyzeResponse {
+  multicopterBodyCount: number;
+  propellerCount: number;
+  cameraCount: number;
+  legCount: number;
+  analysisResult: string;
+  segmentedImageUrl: string;
+}
+
