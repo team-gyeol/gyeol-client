@@ -4,7 +4,7 @@ import * as styles from "./aside.css";
 
 const ID = {
   MY_INFO: "my_info",
-  DRON_HISTORY: "dron_history",
+  DRONE_HISTORY: "drone_history",
   INFO_PATCH: "info_patch",
 };
 
@@ -25,9 +25,11 @@ const Aside = () => {
             나의 정보 조회
           </li>
           <li
-            id={ID.DRON_HISTORY}
-            onClick={() => setSelectedId(ID.DRON_HISTORY)}
-            className={styles.list({ isClick: selectedId === ID.DRON_HISTORY })}
+            id={ID.DRONE_HISTORY}
+            onClick={() => setSelectedId(ID.DRONE_HISTORY)}
+            className={styles.list({
+              isClick: selectedId === ID.DRONE_HISTORY,
+            })}
           >
             드론 히스토리
           </li>
