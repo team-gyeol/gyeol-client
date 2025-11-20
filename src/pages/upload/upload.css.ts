@@ -6,7 +6,7 @@ import { color } from "@shared/styles/token/color.css";
 export const container = style({
   width: "60rem",
   margin: "0 auto",
-  padding: "2rem",
+  padding: " 0 2rem 4rem 2rem",
 });
 
 export const title = style({
@@ -95,6 +95,7 @@ export const fileInfo = style({
 
 export const previewContainer = style({
   display: "flex",
+  width: "100%",
   justifyContent: "center",
   alignItems: "center",
   padding: "1rem",
@@ -104,7 +105,7 @@ export const previewContainer = style({
 
 export const previewGrid = style({
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+  width: "100%",
   gap: "1rem",
   padding: "1rem",
   border: `1px dashed ${color.border100}`,
@@ -126,9 +127,26 @@ export const previewFileName = style({
 
 export const preview = style({
   maxWidth: "100%",
-  maxHeight: "400px",
+  maxHeight: "40rem",
   objectFit: "contain",
   borderRadius: "4px",
+});
+
+export const previewPlaceholder = style({
+  width: "100%",
+  minHeight: "40rem",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: color.white200,
+  borderRadius: "4px",
+  border: `1px dashed ${color.border100}`,
+});
+
+export const placeholderText = style({
+  fontSize: "1.6rem",
+  color: color.gray100,
+  fontWeight: "500",
 });
 
 export const buttonGroup = style({

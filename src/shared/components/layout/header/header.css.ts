@@ -39,3 +39,7 @@ export const textContainer = style({
 export const text = style({
   ...fontStyles.section_r_14,
 });
+
+export const upload = style({
+  cursor: "pointer",
+});
