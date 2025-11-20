@@ -56,3 +56,29 @@ export const highlight = style({
   fontWeight: "800",
   color: color.black300,
 });
+
+export const logoutContainer = style({
+  display: "flex",
+  justifyContent: "flex-end",
+  padding: "2rem 16rem 2rem 10rem",
+});
+
+export const logoutButton = style({
+  padding: "1rem 2rem",
+  fontSize: "1.4rem",
+  fontWeight: "600",
+  color: color.white100,
+  backgroundColor: color.error_red,
+  border: "none",
+  borderRadius: "0.4rem",
+  cursor: "pointer",
+  transition: "opacity 0.2s",
+
+  ":hover": {
+    opacity: 0.8,
+  },
+
+  ":active": {
+    opacity: 0.6,
+  },
+});

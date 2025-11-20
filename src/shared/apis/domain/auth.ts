@@ -16,3 +16,10 @@ export const refreshAccessToken = async (
   return response.data;
 };
 
+/**
+ * 로그아웃
+ */
+export const logout = async (): Promise<void> => {
+  await instance.post(END_POINT.TOKEN_LOGOUT);
+};
+
