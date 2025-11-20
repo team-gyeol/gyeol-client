@@ -1,5 +1,6 @@
 export const END_POINT = {
   LOGIN: "api/oauth/kakao/callback",
+  TOKEN_REFRESH: "api/token/refresh",
   MY: "api/mypage",
   IMAGE: "api/mypage/image",
   IMAGE_ANALYZE: "api/images/analyze",
