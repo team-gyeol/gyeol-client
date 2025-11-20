@@ -60,25 +60,17 @@ export const highlight = style({
 export const logoutContainer = style({
   display: "flex",
   justifyContent: "flex-end",
-  padding: "2rem 16rem 2rem 10rem",
+  paddingTop: "5rem",
 });
 
 export const logoutButton = style({
-  padding: "1rem 2rem",
-  fontSize: "1.4rem",
+  fontSize: "1.2rem",
   fontWeight: "600",
+  padding: "1rem 1.5rem",
+  backgroundColor: color.black100,
   color: color.white100,
-  backgroundColor: color.error_red,
+  borderRadius: "5px",
   border: "none",
-  borderRadius: "0.4rem",
   cursor: "pointer",
   transition: "opacity 0.2s",
-
-  ":hover": {
-    opacity: 0.8,
-  },
-
-  ":active": {
-    opacity: 0.6,
-  },
 });

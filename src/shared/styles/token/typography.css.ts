@@ -10,6 +10,7 @@ export const typography = {
     30: "3rem",
     35: "3.5rem",
     45: "4.5rem",
+    55: "5.5rem",
     80: "8rem",
   },
   fontWeight: {

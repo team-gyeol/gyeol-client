@@ -9,16 +9,16 @@ export const container = style({
   alignItems: "center",
   width: "100vw",
   height: "100vh",
-  padding: "0 6rem",
+  padding: "0 10rem",
   backgroundColor: color.black100,
 });
 
 export const text = style({
-  ...fontStyles.head_hv_45,
+  ...fontStyles.head_hv_55,
   color: color.white100,
 });
 
 export const image = style({
-  width: "40rem",
+  width: "55rem",
   objectFit: "contain",
 });

@@ -14,13 +14,13 @@ export const asideContainer = style({
 export const verticalLine = style({
   width: "0.2rem",
   backgroundColor: color.black200,
-  height: "11.4rem",
+  height: "10.4rem",
   borderRadius: "2px",
 });
 
 export const asideTitle = style({
   ...fontStyles.section_r_14,
-  fontSize: "1.6rem",
+  fontSize: "1.68rem",
   color: color.black300,
   fontWeight: "700",
   marginBottom: "0.5rem",
@@ -29,17 +29,15 @@ export const asideTitle = style({
 export const listContainer = style({
   display: "flex",
   flexDirection: "column",
-  gap: "1rem",
-  marginTop: "1.5rem",
+  gap: "0.5rem",
+  marginTop: "1.8rem",
   listStyle: "none",
-  padding: 0,
-  margin: 0,
 });
 
 export const list = recipe({
   base: {
     cursor: "pointer",
-    fontSize: "1.3rem",
+    fontSize: "1.5rem",
     width: "100%",
     padding: "0.5rem 0",
     transition: "color 0.2s",
