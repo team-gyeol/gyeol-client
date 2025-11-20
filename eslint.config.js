@@ -23,6 +23,7 @@ export default tseslint.config(
       curly: ["error", "all"],
       "no-console": "warn",
       "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-useless-catch": "off",
       "@typescript-eslint/no-unused-vars": [
         "warn",
         { argsIgnorePattern: "^_|^args$" },
