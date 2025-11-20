@@ -21,6 +21,10 @@ export const globalRoutes = [
     Component: LoginCallbackPage,
   },
   {
+    path: routePath.CALLBACK,
+    Component: LoginCallbackPage,
+  },
+  {
     path: routePath.UPLOAD,
     Component: UploadPage,
   },

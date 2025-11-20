@@ -8,6 +8,18 @@ export const instance = axios.create({
 });
 
 instance.interceptors.request.use((config) => {
+  const isKakaoCallback =
+    config.url?.includes("oauth/kakao/callback") ||
+    config.url?.includes("/api/oauth/kakao/callback");
+
+  if (isKakaoCallback) {
+    if (config.headers) {
+      config.headers.Authorization = undefined;
+      delete config.headers.Authorization;
+    }
+    return config;
+  }
+
   const token = tokenService.getAccessToken();
 
   if (token) {

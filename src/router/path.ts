@@ -6,6 +6,7 @@ export const routePath = {
   MY: "/my",
 
   LOGIN_FALLBACK: "/login-fallback",
+  CALLBACK: "/callback",
 } as const;
 
 export type Routes = (typeof routePath)[keyof typeof routePath];
