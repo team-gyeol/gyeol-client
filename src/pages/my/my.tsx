@@ -26,9 +26,6 @@ const My = () => {
             />
           )}
           {selectedId === ID.DRONE_HISTORY && <HistoryList />}
-          {selectedId === ID.INFO_PATCH && (
-            <div>정보 수정 페이지 (구현 예정)</div>
-          )}
         </div>
       </div>
     </Layout>

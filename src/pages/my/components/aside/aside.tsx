@@ -3,7 +3,6 @@ import * as styles from "./aside.css";
 export const ID = {
   MY_INFO: "my_info",
   DRONE_HISTORY: "drone_history",
-  INFO_PATCH: "info_patch",
 } as const;
 
 export type SelectedId = (typeof ID)[keyof typeof ID];
@@ -35,13 +34,6 @@ const Aside = ({ selectedId, onSelect }: AsideProps) => {
             })}
           >
             드론 히스토리
-          </li>
-          <li
-            id={ID.INFO_PATCH}
-            onClick={() => onSelect(ID.INFO_PATCH)}
-            className={styles.list({ isClick: selectedId === ID.INFO_PATCH })}
-          >
-            정보 수정
           </li>
         </ul>
       </div>

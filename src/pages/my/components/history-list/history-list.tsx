@@ -18,7 +18,7 @@ const HistoryList = () => {
     page: 1,
     size: 10,
   });
-  const { mutate: deleteImage, isPending: isDeleting } = useDeleteImage();
+  const { mutate: deleteImage } = useDeleteImage();
 
   const handleHistoryClick = (imageId: number) => {
     setSelectedHistoryId(imageId);
@@ -41,8 +41,7 @@ const HistoryList = () => {
             setSelectedHistoryId(null);
           }
         },
-        onError: (error) => {
-          console.error("이미지 삭제 실패:", error);
+        onError: () => {
           alert("이미지 삭제에 실패했습니다.");
         },
       });

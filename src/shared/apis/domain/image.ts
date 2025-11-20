@@ -3,7 +3,12 @@ import { useMutation, useQuery, useSuspenseQuery } from "@tanstack/react-query";
 import { END_POINT } from "../config/end-point";
 import { instance } from "../instance";
 import { queryKey } from "../query-key";
-import type { ImageAnalyzeRequest, ImageAnalyzeResponse } from "../types/image";
+import type {
+  ImageAnalyzeMultipleRequest,
+  ImageAnalyzeMultipleResponse,
+  ImageAnalyzeRequest,
+  ImageAnalyzeResponse,
+} from "../types/image";
 import type {
   ImageListParams,
   ImageListResponse,
@@ -87,5 +92,36 @@ export const useDeleteImage = () => {
   return useMutation({
     mutationKey: [queryKey.DELETE_IMAGE],
     mutationFn: deleteImage,
+  });
+};
+
+/**
+ * 여러 이미지 분석 API
+ */
+const analyzeMultipleImages = async (
+  request: ImageAnalyzeMultipleRequest,
+): Promise<ImageAnalyzeMultipleResponse> => {
+  const formData = new FormData();
+  request.images.forEach((image) => {
+    formData.append("images", image);
+  });
+
+  const response = await instance.post<ImageAnalyzeMultipleResponse>(
+    END_POINT.IMAGE_ANALYZE_MULTIPLE,
+    formData,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    },
+  );
+
+  return response.data;
+};
+
+export const useAnalyzeMultipleImages = () => {
+  return useMutation({
+    mutationKey: [queryKey.ANALYZE_MULTIPLE_IMAGES],
+    mutationFn: analyzeMultipleImages,
   });
 };

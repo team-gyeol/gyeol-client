@@ -11,3 +11,11 @@ export interface ImageAnalyzeResponse {
   segmentedImageUrl: string;
 }
 
+export interface ImageAnalyzeMultipleRequest {
+  images: File[];
+}
+
+export interface ImageAnalyzeMultipleResponse {
+  results: ImageAnalyzeResponse[];
+}
+
