@@ -6,6 +6,10 @@ export const fontStyles = {
     fontSize: typography.fontSize[80],
     fontWeight: typography.fontWeight.heavy,
   },
+  head_hv_55: {
+    fontSize: typography.fontSize[55],
+    fontWeight: typography.fontWeight.heavy,
+  },
   head_hv_45: {
     fontSize: typography.fontSize[45],
     fontWeight: typography.fontWeight.heavy,

@@ -17,10 +17,10 @@ export const textContainer = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "end",
-  paddingRight: "6rem",
+  paddingRight: "10rem",
 });
 
 export const text = style({
-  ...fontStyles.head_hv_45,
+  ...fontStyles.head_hv_55,
   color: color.white100,
 });

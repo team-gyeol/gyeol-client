@@ -1,21 +1,35 @@
-import { HomePage, LoginPage, MyPage, UploadPage } from "../lazy";
+import {
+  HomePage,
+  LoginCallbackPage,
+  LoginPage,
+  MyPage,
+  UploadPage,
+} from "../lazy";
 import { routePath } from "../path";
 
 export const globalRoutes = [
   {
     path: routePath.ROOT,
-    element: <HomePage />,
+    Component: HomePage,
   },
   {
     path: routePath.LOGIN,
-    element: <LoginPage />,
+    Component: LoginPage,
+  },
+  {
+    path: routePath.LOGIN_FALLBACK,
+    Component: LoginCallbackPage,
+  },
+  {
+    path: routePath.CALLBACK,
+    Component: LoginCallbackPage,
   },
   {
     path: routePath.UPLOAD,
-    element: <UploadPage />,
+    Component: UploadPage,
   },
   {
     path: routePath.MY,
-    element: <MyPage />,
+    Component: MyPage,
   },
 ];
