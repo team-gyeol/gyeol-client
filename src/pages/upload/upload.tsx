@@ -65,8 +65,7 @@ const Upload = () => {
       analyzeMultipleImages(
         { images: selectedFiles },
         {
-          onError: (error) => {
-            console.error("이미지 분석 실패:", error);
+          onError: () => {
             alert("이미지 분석에 실패했습니다.");
           },
         },
@@ -76,8 +75,7 @@ const Upload = () => {
       analyzeImage(
         { image: selectedFiles[0] },
         {
-          onError: (error) => {
-            console.error("이미지 분석 실패:", error);
+          onError: () => {
             alert("이미지 분석에 실패했습니다.");
           },
         },
