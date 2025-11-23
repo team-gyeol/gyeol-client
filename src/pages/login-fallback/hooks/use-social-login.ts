@@ -39,7 +39,7 @@ export const useSocialLogin = () => {
 
         navigate(routePath.ROOT);
       } catch (error) {
-        alert("카카오 로그인에 실패하였습니다.");
+        console.log("실패");
         throw error;
       }
     },
