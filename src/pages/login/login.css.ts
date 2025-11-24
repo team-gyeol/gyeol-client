@@ -2,6 +2,8 @@
 
 import { style } from "@vanilla-extract/css";
 
+import { screen } from "@shared/styles";
+
 import { color } from "@shared/styles/token/color.css";
 import { fontStyles } from "@shared/styles/token/font-style.css";
 
@@ -14,7 +16,7 @@ export const loginContainer = style({
 });
 
 export const loginSection = style({
-  width: "50rem",
+  maxWidth: "50rem",
   height: "35rem",
   boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
   borderRadius: "10px",
@@ -26,10 +28,15 @@ export const loginSection = style({
 
 export const textContainer = style({});
 
-export const title = style({
-  ...fontStyles.title_eb_25,
-  color: color.black100,
-});
+export const title = style([
+  {
+    ...fontStyles.title_eb_25,
+    color: color.black100,
+  },
+  screen.mobile({
+    ...fontStyles.body_b_20,
+  }),
+]);
 
 export const button = style({
   ...fontStyles.section_r_12,

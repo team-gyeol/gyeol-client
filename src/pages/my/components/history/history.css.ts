@@ -1,23 +1,30 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
+import { screen } from "@shared/styles";
+
 import { color } from "@shared/styles/token/color.css";
 import { fontStyles } from "@shared/styles/token/font-style.css";
 
 export const historyContainer = recipe({
-  base: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "1.5rem 2rem",
-    width: "100%",
-    minHeight: "8rem",
-    border: `1px solid ${color.border100}`,
-    borderRadius: "4px",
-    backgroundColor: color.white100,
-    transition: "background-color 0.2s",
-    listStyle: "none",
-  },
+  base: [
+    {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "1.5rem 2rem",
+      width: "100%",
+      minHeight: "8rem",
+      border: `1px solid ${color.border100}`,
+      borderRadius: "4px",
+      backgroundColor: color.white100,
+      transition: "background-color 0.2s",
+      listStyle: "none",
+    },
+    screen.mobile({
+      gap: "2rem",
+    }),
+  ],
   variants: {
     isClickable: {
       true: {

@@ -1,17 +1,24 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
-import { color } from "@shared/styles/token/color.css";
+import { screen } from "@shared/styles";
 
-export const container = style({
-  width: "60rem",
-  margin: "0 auto",
-  padding: " 0 2rem 4rem 2rem",
-});
+import { color } from "@shared/styles/token/color.css";
+import { fontStyles } from "@shared/styles/token/font-style.css";
+
+export const container = style([
+  {
+    width: "60rem",
+    margin: "0 auto",
+    padding: " 0 2rem 4rem 2rem",
+  },
+  screen.mobile({
+    maxWidth: "45rem",
+  }),
+]);
 
 export const title = style({
-  fontSize: "3rem",
-  fontWeight: "700",
+  ...fontStyles.body_b_30,
   marginBottom: "2rem",
   textAlign: "center",
 });

@@ -44,7 +44,7 @@ const Header = ({ darkMode }: HeaderProps) => {
       <div className={styles.textContainer}>
         <a
           href="#start"
-          className={styles.text}
+          className={styles.logoLoginText}
           onClick={() => handleNavigate(routePath.ROOT)}
         >
           LOGO
@@ -78,7 +78,7 @@ const Header = ({ darkMode }: HeaderProps) => {
         </a>
       </div>
       <button
-        className={styles.text}
+        className={styles.logoLoginText}
         onClick={() =>
           handleNavigate(isLoggedIn ? routePath.MY : routePath.LOGIN)
         }

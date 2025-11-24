@@ -29,7 +29,6 @@ const Upload = () => {
     const files = Array.from(event.target.files || []);
     if (files.length === 0) return;
 
-    // 이미지 파일만 필터링
     const imageFiles = files.filter((file) => file.type.startsWith("image/"));
     if (imageFiles.length !== files.length) {
       alert("이미지 파일만 업로드 가능합니다.");
@@ -39,7 +38,6 @@ const Upload = () => {
 
     setSelectedFiles(imageFiles);
 
-    // 미리보기 URL 생성
     const readers = imageFiles.map((file) => {
       return new Promise<string>((resolve) => {
         const reader = new FileReader();
@@ -62,7 +60,6 @@ const Upload = () => {
     }
 
     if (isMultipleMode && selectedFiles.length > 1) {
-      // 여러 장 분석
       analyzeMultipleImages(
         { images: selectedFiles },
         {
@@ -72,7 +69,6 @@ const Upload = () => {
         },
       );
     } else {
-      // 단일 이미지 분석
       analyzeImage(
         { image: selectedFiles[0] },
         {

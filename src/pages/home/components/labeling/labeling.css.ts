@@ -17,15 +17,7 @@ export const container = style([
   },
   screen.mobile({
     flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "12rem 0",
-  }),
-]);
-
-export const textContainer = style([
-  screen.mobile({
-    marginTop: "4rem",
+    padding: "10rem 0",
   }),
 ]);
 
@@ -36,19 +28,13 @@ export const text = style([
   },
   screen.mobile({
     ...fontStyles.head_hv_30,
-  }),
-]);
-
-export const secondTitletext = style([
-  text,
-  {
     textAlign: "center",
-  },
+  }),
 ]);
 
 export const image = style([
   {
-    width: "50rem",
+    width: "55rem",
     objectFit: "contain",
   },
   screen.mobile({

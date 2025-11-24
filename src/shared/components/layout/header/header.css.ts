@@ -1,6 +1,8 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
+import { screen } from "@shared/styles";
+
 import { color } from "@shared/styles/token/color.css";
 import { fontStyles } from "@shared/styles/token/font-style.css";
 
@@ -36,9 +38,18 @@ export const textContainer = style({
   gap: "4rem",
 });
 
-export const text = style({
+export const logoLoginText = style({
   ...fontStyles.section_r_14,
 });
+
+export const text = style([
+  {
+    ...fontStyles.section_r_14,
+  },
+  screen.mobile({
+    display: "none",
+  }),
+]);
 
 export const upload = style({
   cursor: "pointer",
