@@ -35,7 +35,7 @@ const processQueue = (
 export const onResponseFulfilled = (response: AxiosResponse) => response;
 
 /**
- * 응답 인터셉터: 401 에러 시 자동으로 토큰 갱신
+ * 응답 인터셉터: 401, 403 에러 시 자동으로 토큰 갱신 또는 로그아웃 처리
  */
 export const setupResponseInterceptor = (instance: AxiosInstance) => {
   return async (error: AxiosError) => {
@@ -43,8 +43,19 @@ export const setupResponseInterceptor = (instance: AxiosInstance) => {
       _retry?: boolean;
     };
 
+    const status = error.response?.status;
+
+    // 403 Forbidden 에러는 토큰이 만료되었거나 권한이 없는 경우이므로 로그아웃 처리
+    if (status === 403) {
+      tokenService.removeAccessToken();
+      tokenService.removeRefreshToken();
+      window.dispatchEvent(new Event("loginStatusChanged"));
+      window.location.href = routePath.ROOT;
+      return Promise.reject(error);
+    }
+
     // 401 에러이고, 이미 재시도한 요청이 아닌 경우
-    if (error.response?.status === 401 && !originalRequest._retry) {
+    if (status === 401 && !originalRequest._retry) {
       // 리프레시 토큰 API 자체가 401이면 로그아웃 처리
       if (originalRequest.url?.includes("token/refresh")) {
         tokenService.removeAccessToken();
