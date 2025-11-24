@@ -38,21 +38,26 @@ export const listContainer = style([
   },
   screen.mobile({
     flexDirection: "revert",
-    gap: "2rem",
+    gap: "1.4rem",
   }),
 ]);
 
 export const list = recipe({
-  base: {
-    cursor: "pointer",
-    fontSize: "1.5rem",
-    width: "100%",
-    padding: "0.5rem 0",
-    transition: "color 0.2s",
-    backgroundColor: "transparent",
-    border: "none",
-    textAlign: "left",
-  },
+  base: [
+    {
+      cursor: "pointer",
+      fontSize: "1.5rem",
+      width: "100%",
+      padding: "0.5rem 0",
+      transition: "color 0.2s",
+      backgroundColor: "transparent",
+      border: "none",
+      textAlign: "left",
+    },
+    screen.mobile({
+      fontSize: "1.3rem",
+    }),
+  ],
   variants: {
     isClick: {
       true: {

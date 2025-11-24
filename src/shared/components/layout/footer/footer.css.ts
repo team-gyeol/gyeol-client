@@ -40,13 +40,23 @@ export const sectionContainer = style({
   gap: "1rem",
 });
 
-export const title = style({
-  ...fontStyles.body_b_14,
-});
+export const title = style([
+  {
+    ...fontStyles.body_b_14,
+  },
+  screen.mobile({
+    fontSize: "1.2rem",
+  }),
+]);
 
-export const contents = style({
-  ...fontStyles.section_r_14,
-});
+export const contents = style([
+  {
+    ...fontStyles.section_r_14,
+  },
+  screen.mobile({
+    fontSize: "1.1rem",
+  }),
+]);
 
 export const etc = style([
   screen.mobile({

@@ -7,18 +7,23 @@ import { color } from "@shared/styles/token/color.css";
 import { fontStyles } from "@shared/styles/token/font-style.css";
 
 export const headerContainer = recipe({
-  base: {
-    position: "fixed",
-    left: "0",
-    top: "0",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
-    height: "8rem",
-    padding: "0 6rem",
-    backgroundColor: color.white100,
-  },
+  base: [
+    {
+      position: "fixed",
+      left: "0",
+      top: "0",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      width: "100%",
+      height: "8rem",
+      padding: "0 6rem",
+      backgroundColor: color.white100,
+    },
+    screen.mobile({
+      padding: "0 2.2rem",
+    }),
+  ],
   variants: {
     darkMode: {
       true: {
@@ -38,9 +43,14 @@ export const textContainer = style({
   gap: "4rem",
 });
 
-export const logoLoginText = style({
-  ...fontStyles.section_r_14,
-});
+export const logoLoginText = style([
+  {
+    ...fontStyles.section_r_14,
+  },
+  screen.mobile({
+    fontSize: "1.2rem",
+  }),
+]);
 
 export const text = style([
   {

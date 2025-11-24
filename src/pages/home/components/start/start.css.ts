@@ -35,7 +35,7 @@ const titleText = style([
   },
   screen.mobile({
     padding: "0 2rem",
-    ...fontStyles.head_hv_45,
+    ...fontStyles.head_hv_35,
   }),
 ]);
 
@@ -67,9 +67,14 @@ export const startContainer = style([
   }),
 ]);
 
-export const startText = style({
-  ...fontStyles.section_r_20,
-});
+export const startText = style([
+  {
+    ...fontStyles.section_r_20,
+  },
+  screen.mobile({
+    fontSize: "1.6rem",
+  }),
+]);
 
 export const button = style([
   {
@@ -77,5 +82,6 @@ export const button = style([
   },
   screen.mobile({
     marginBottom: "5rem",
+    ...fontStyles.title_eb_25,
   }),
 ]);

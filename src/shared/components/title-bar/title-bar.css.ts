@@ -1,14 +1,22 @@
 import { style } from "@vanilla-extract/css";
 
+import { screen } from "@shared/styles";
+
 import { color } from "@shared/styles/token/color.css";
 import { fontStyles } from "@shared/styles/token/font-style.css";
 
-export const titleBar = style({
-  ...fontStyles.body_b_14,
-  color: color.white100,
-  height: "3rem",
-  backgroundColor: color.black100,
-  display: "flex",
-  alignItems: "center",
-  padding: "0 1rem",
-});
+export const titleBar = style([
+  {
+    ...fontStyles.body_b_14,
+    color: color.white100,
+    height: "3rem",
+    backgroundColor: color.black100,
+    display: "flex",
+    alignItems: "center",
+    padding: "0 1rem",
+  },
+  screen.mobile({
+    fontSize: "1.2rem",
+    fontWeight: "500",
+  }),
+]);

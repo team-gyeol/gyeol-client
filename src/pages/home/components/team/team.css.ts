@@ -18,9 +18,14 @@ export const teamContainer = style([
   }),
 ]);
 
-export const infoContainer = style({
-  display: "flex",
-});
+export const infoContainer = style([
+  {
+    display: "flex",
+  },
+  screen.mobile({
+    marginTop: "6rem",
+  }),
+]);
 
 export const image = style([
   {
