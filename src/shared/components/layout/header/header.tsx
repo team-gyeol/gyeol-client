@@ -44,10 +44,10 @@ const Header = ({ darkMode }: HeaderProps) => {
       <div className={styles.textContainer}>
         <a
           href="#start"
-          className={styles.logoLoginText}
+          className={styles.logo}
           onClick={() => handleNavigate(routePath.ROOT)}
         >
-          LOGO
+          <img src="/logo.svg" />
         </a>
         <a
           href="#about"

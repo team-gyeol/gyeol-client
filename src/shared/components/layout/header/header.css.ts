@@ -43,6 +43,12 @@ export const textContainer = style({
   gap: "4rem",
 });
 
+export const logo = style([
+  screen.mobile({
+    width: "5rem",
+  }),
+]);
+
 export const logoLoginText = style([
   {
     ...fontStyles.section_r_14,
@@ -55,6 +61,8 @@ export const logoLoginText = style([
 export const text = style([
   {
     ...fontStyles.section_r_14,
+    display: "flex",
+    alignItems: "center",
   },
   screen.mobile({
     display: "none",
@@ -63,4 +71,6 @@ export const text = style([
 
 export const upload = style({
   cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
 });
