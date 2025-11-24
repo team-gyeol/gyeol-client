@@ -7,3 +7,4 @@ export const MyPage = lazy(() => import("@pages/my/my"));
 export const LoginCallbackPage = lazy(
   () => import("@pages/login-fallback/login-fallback"),
 );
+export const ErrorPage = lazy(() => import("@pages/error/error"));

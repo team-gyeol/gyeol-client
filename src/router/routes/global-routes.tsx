@@ -1,4 +1,7 @@
+import { ProtectedRoute } from "@shared/components/protected-route/protected-route";
+
 import {
+  ErrorPage,
   HomePage,
   LoginCallbackPage,
   LoginPage,
@@ -26,10 +29,22 @@ export const globalRoutes = [
   },
   {
     path: routePath.UPLOAD,
-    Component: UploadPage,
+    Component: () => (
+      <ProtectedRoute>
+        <UploadPage />
+      </ProtectedRoute>
+    ),
   },
   {
     path: routePath.MY,
-    Component: MyPage,
+    Component: () => (
+      <ProtectedRoute>
+        <MyPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "*",
+    Component: ErrorPage,
   },
 ];

@@ -1,3 +1,4 @@
+import { routePath } from "@router/path";
 import type { InternalAxiosRequestConfig } from "axios";
 import type { AxiosInstance, AxiosResponse } from "axios";
 import { AxiosError } from "axios";
@@ -49,6 +50,7 @@ export const setupResponseInterceptor = (instance: AxiosInstance) => {
         tokenService.removeAccessToken();
         tokenService.removeRefreshToken();
         window.dispatchEvent(new Event("loginStatusChanged"));
+        window.location.href = routePath.ROOT;
         return Promise.reject(error);
       }
 
@@ -79,12 +81,17 @@ export const setupResponseInterceptor = (instance: AxiosInstance) => {
         tokenService.removeAccessToken();
         tokenService.removeRefreshToken();
         window.dispatchEvent(new Event("loginStatusChanged"));
+        window.location.href = routePath.ROOT;
         return Promise.reject(error);
       }
 
       try {
         const response = await refreshAccessToken({ refreshToken });
         const { accessToken } = response;
+
+        if (!accessToken) {
+          throw new Error("액세스 토큰이 응답에 없습니다.");
+        }
 
         tokenService.saveAccessToken(accessToken);
 
@@ -104,6 +111,7 @@ export const setupResponseInterceptor = (instance: AxiosInstance) => {
         tokenService.removeAccessToken();
         tokenService.removeRefreshToken();
         window.dispatchEvent(new Event("loginStatusChanged"));
+        window.location.href = routePath.ROOT;
         return Promise.reject(refreshError);
       }
     }

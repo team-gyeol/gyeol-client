@@ -15,6 +15,13 @@ export const instance = axios.create({
   baseURL: appConfig.api.baseUrl,
 });
 
+/**
+ * 리프레시 토큰 API 호출용 인스턴스 (인터셉터 없음)
+ */
+export const refreshInstance = axios.create({
+  baseURL: appConfig.api.baseUrl,
+});
+
 // 요청 인터셉터 등록
 instance.interceptors.request.use(setupRequestInterceptor);
 

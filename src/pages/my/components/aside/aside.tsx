@@ -15,9 +15,9 @@ interface AsideProps {
 const Aside = ({ selectedId, onSelect }: AsideProps) => {
   return (
     <aside className={styles.asideContainer}>
-      <div className={styles.verticalLine} />
+      <div className={`${styles.verticalLine} ${styles.mobile}`} />
       <div>
-        <p className={styles.asideTitle}>MY_PAGE</p>
+        <p className={`${styles.asideTitle} ${styles.mobile}`}>MY_PAGE</p>
         <ul className={styles.listContainer}>
           <li
             id={ID.MY_INFO}

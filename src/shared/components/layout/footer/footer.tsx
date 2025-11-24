@@ -12,10 +12,16 @@ const Footer = forwardRef<HTMLDivElement>((_, ref) => {
             <p className={styles.contents}>GitHub: github.com/team-gyeol</p>
           </div>
           <div className={styles.sectionContainer}>
-            <p className={styles.title}>TEAM: SAFECODE</p>
-            <p className={styles.contents}>박인영(AI): 010-2469-6704</p>
-            <p className={styles.contents}>박용진(BE): 010-9876-5432</p>
-            <p className={styles.contents}>조혜린(FE): 010-4177-8703</p>
+            <p className={`${styles.title} ${styles.etc}`}>TEAM: SAFECODE</p>
+            <p className={`${styles.contents} ${styles.etc}`}>
+              박인영(AI): 010-2469-6704
+            </p>
+            <p className={`${styles.contents} ${styles.etc}`}>
+              박용진(BE): 010-9876-5432
+            </p>
+            <p className={`${styles.contents} ${styles.etc}`}>
+              조혜린(FE): 010-4177-8703
+            </p>
           </div>
         </div>
         <div className={styles.divideContainer}>

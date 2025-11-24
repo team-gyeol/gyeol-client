@@ -1,6 +1,8 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
+import { screen } from "@shared/styles";
+
 import { color } from "@shared/styles/token/color.css";
 import { fontStyles } from "@shared/styles/token/font-style.css";
 
@@ -26,25 +28,36 @@ export const asideTitle = style({
   marginBottom: "0.5rem",
 });
 
-export const listContainer = style({
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.5rem",
-  marginTop: "1.8rem",
-  listStyle: "none",
-});
+export const listContainer = style([
+  {
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.5rem",
+    marginTop: "1.8rem",
+    listStyle: "none",
+  },
+  screen.mobile({
+    flexDirection: "revert",
+    gap: "1.4rem",
+  }),
+]);
 
 export const list = recipe({
-  base: {
-    cursor: "pointer",
-    fontSize: "1.5rem",
-    width: "100%",
-    padding: "0.5rem 0",
-    transition: "color 0.2s",
-    backgroundColor: "transparent",
-    border: "none",
-    textAlign: "left",
-  },
+  base: [
+    {
+      cursor: "pointer",
+      fontSize: "1.5rem",
+      width: "100%",
+      padding: "0.5rem 0",
+      transition: "color 0.2s",
+      backgroundColor: "transparent",
+      border: "none",
+      textAlign: "left",
+    },
+    screen.mobile({
+      fontSize: "1.3rem",
+    }),
+  ],
   variants: {
     isClick: {
       true: {
@@ -61,3 +74,9 @@ export const list = recipe({
     },
   },
 });
+
+export const mobile = style([
+  screen.mobile({
+    display: "none",
+  }),
+]);
