@@ -71,7 +71,7 @@ const Header = ({ darkMode }: HeaderProps) => {
           INTRODUCE
         </a>
         <a
-          className={`${styles.text} ${styles.upload}`}
+          className={`${styles.logoLoginText} ${styles.upload}`}
           onClick={() => handleNavigate(routePath.UPLOAD)}
         >
           UPLOAD

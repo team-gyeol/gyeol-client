@@ -13,7 +13,7 @@ export const container = style([
     padding: " 0 2rem 4rem 2rem",
   },
   screen.mobile({
-    maxWidth: "45rem",
+    width: "100%",
   }),
 ]);
 

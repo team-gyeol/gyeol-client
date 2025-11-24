@@ -39,7 +39,7 @@ export const text = style([
     color: color.white100,
   },
   screen.mobile({
-    ...fontStyles.head_hv_30,
+    fontSize: "2.3rem",
   }),
 ]);
 
