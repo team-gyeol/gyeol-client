@@ -16,6 +16,7 @@ export const container = style({
   backgroundColor: "#FEE500",
   gap: "0.7rem",
   cursor: "pointer",
+  whiteSpace: "nowrap",
 
   color: color.black100,
   fontSize: "1.7rem",
