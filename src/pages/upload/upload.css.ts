@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
 import { screen } from "@shared/styles";
@@ -286,4 +286,70 @@ export const resultCardTitle = style({
   fontWeight: "700",
   marginBottom: "1.5rem",
   color: color.black300,
+});
+
+export const evaluationSection = style({
+  marginTop: "2rem",
+  padding: "2rem",
+  border: `1px solid ${color.black100}`,
+  borderRadius: "8px",
+  backgroundColor: color.white100,
+});
+
+export const evaluationItem = style({
+  marginBottom: "3rem",
+  ":last-child": {
+    marginBottom: "0",
+  },
+});
+
+export const evaluationTitle = style({
+  fontSize: "2rem",
+  fontWeight: "700",
+  marginBottom: "1.5rem",
+  color: color.black300,
+});
+
+export const evaluationImage = style({
+  width: "100%",
+  maxWidth: "100%",
+  borderRadius: "4px",
+  border: `1px solid ${color.border100}`,
+  marginBottom: "1.5rem",
+});
+
+export const evaluationDescription = style({
+  padding: "1.5rem",
+  backgroundColor: color.white200,
+  borderRadius: "4px",
+});
+
+export const evaluationText = style({
+  fontSize: "1.4rem",
+  lineHeight: "1.8",
+  color: color.black200,
+  marginBottom: "1.5rem",
+  ":last-child": {
+    marginBottom: "0",
+  },
+});
+
+export const evaluationList = style({
+  listStyle: "none",
+  padding: "0",
+  margin: "0",
+  display: "flex",
+  flexDirection: "column",
+  gap: "1.5rem",
+});
+
+globalStyle(`${evaluationList} li`, {
+  fontSize: "1.4rem",
+  lineHeight: "1.6",
+  color: color.black200,
+});
+
+globalStyle(`${evaluationList} li strong`, {
+  color: color.black300,
+  fontWeight: "600",
 });
