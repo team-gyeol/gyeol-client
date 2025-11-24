@@ -29,7 +29,6 @@ const Upload = () => {
     const files = Array.from(event.target.files || []);
     if (files.length === 0) return;
 
-    // 이미지 파일만 필터링
     const imageFiles = files.filter((file) => file.type.startsWith("image/"));
     if (imageFiles.length !== files.length) {
       alert("이미지 파일만 업로드 가능합니다.");
@@ -39,7 +38,6 @@ const Upload = () => {
 
     setSelectedFiles(imageFiles);
 
-    // 미리보기 URL 생성
     const readers = imageFiles.map((file) => {
       return new Promise<string>((resolve) => {
         const reader = new FileReader();
@@ -62,7 +60,6 @@ const Upload = () => {
     }
 
     if (isMultipleMode && selectedFiles.length > 1) {
-      // 여러 장 분석
       analyzeMultipleImages(
         { images: selectedFiles },
         {
@@ -72,7 +69,6 @@ const Upload = () => {
         },
       );
     } else {
-      // 단일 이미지 분석
       analyzeImage(
         { image: selectedFiles[0] },
         {
@@ -295,6 +291,101 @@ const Upload = () => {
                 )}
               </div>
             ))}
+          </div>
+        )}
+
+        {(singleAnalysisResult || multipleAnalysisResults) && (
+          <div className={styles.evaluationSection}>
+            <h2 className={styles.resultTitle}>인공지능 모델 평가 지표</h2>
+
+            <div className={styles.evaluationItem}>
+              <h3 className={styles.evaluationTitle}>
+                AP 지표 (Average Precision)
+              </h3>
+              <img
+                src="/evaluation1.png"
+                alt="AP 지표"
+                className={styles.evaluationImage}
+              />
+              <div className={styles.evaluationDescription}>
+                <ul className={styles.evaluationList}>
+                  <li>
+                    <strong>AP@[0.50:0.95] = 0.631</strong>
+                    <br />
+                    전반적인 IoU 구간에서 중간 수준의 분할 성능을 보임
+                  </li>
+                  <li>
+                    <strong>AP@0.50 = 0.927</strong>
+                    <br />
+                    대부분의 다리 영역을 잘 찾아 높은 정확도 달성
+                  </li>
+                  <li>
+                    <strong>AP@0.75 = 0.739</strong>
+                    <br />
+                    IoU 0.75 조건에서도 높은 정확도로 세부 윤곽까지 비교적
+                    정확하게 분할
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className={styles.evaluationItem}>
+              <h3 className={styles.evaluationTitle}>
+                PR Curve (Precision-Recall Curve)
+              </h3>
+              <img
+                src="/evaluation3.png"
+                alt="PR Curve"
+                className={styles.evaluationImage}
+              />
+              <div className={styles.evaluationDescription}>
+                <ul className={styles.evaluationList}>
+                  <li>
+                    <strong>곡선이 Precision≈1을 유지하며 Recall이 증가</strong>
+                    <br />
+                    임계값을 낮춰 더 많은 객체를 잡아도 오탐이 거의 없음
+                  </li>
+                  <li>
+                    <strong>
+                      곡선 후반(Recall 0.9 이후)에서 Precision이 떨어지는 구간
+                    </strong>
+                    <br />
+                    모든 객체를 찾으려 할 때 일부 오탐이 생겨 Precision이 감소
+                  </li>
+                  <li>
+                    <strong>전체적으로 PR 곡선이 우상단에 치우쳐 있음</strong>
+                    <br />
+                    IoU 0.50 기준에서는 높은 정밀도와 재현율을 모두 확보한 강한
+                    모델 성능을 보여줌
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className={styles.evaluationItem}>
+              <h3 className={styles.evaluationTitle}>
+                AP vs IoU (Average Precision vs Intersection over Union)
+              </h3>
+              <img
+                src="/evaluation2.png"
+                alt="AP vs IoU"
+                className={styles.evaluationImage}
+              />
+              <div className={styles.evaluationDescription}>
+                <p className={styles.evaluationText}>
+                  IoU 임계값이 0.50에서 0.70 사이일 때는 AP가 0.69~0.77로 비교적
+                  안정적으로 유지되지만, IoU가 0.75 이상으로 높아질수록 AP가
+                  급격히 감소하여 IoU 0.95에서는 거의 0에 근접
+                </p>
+                <p className={styles.evaluationText}>
+                  이러한 곡선 형태는 모델이 예측한 바운딩 박스와 실제 객체의
+                  위치가 완벽하게 일치해야 하는 고정밀 IoU 조건에서는 성능이
+                  크게 저하됨 이는 객체 탐지 모델이 일반적으로 중간 수준의
+                  IoU(0.50~0.75)에서는 우수한 성능을 보이지만, 매우 엄격한 위치
+                  정확도가 요구되는 상황에서는 한계를 보임
+                </p>
+              </div>
+            </div>
           </div>
         )}
       </div>

@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-import * as styles from "./laneling.css";
+import * as styles from "./labeling.css";
 
 const Labeling = forwardRef<HTMLDivElement>((_, ref) => {
   return (

@@ -2,34 +2,51 @@
 
 import { style } from "@vanilla-extract/css";
 
+import { screen } from "@shared/styles";
+
 import { color } from "@shared/styles/token/color.css";
 import { fontStyles } from "@shared/styles/token/font-style.css";
 
-export const loginContainer = style({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100vw",
-  height: "100vh",
-});
+export const loginContainer = style([
+  {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100vw",
+    height: "100vh",
+  },
+  screen.mobile({
+    padding: "0 2rem",
+  }),
+]);
 
-export const loginSection = style({
-  width: "50rem",
-  height: "35rem",
-  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-  borderRadius: "10px",
-  padding: "6rem 5rem",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-});
+export const loginSection = style([
+  {
+    width: "50rem",
+    height: "35rem",
+    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+    borderRadius: "10px",
+    padding: "6rem 5rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+  screen.mobile({
+    width: "100%",
+  }),
+]);
 
 export const textContainer = style({});
 
-export const title = style({
-  ...fontStyles.title_eb_25,
-  color: color.black100,
-});
+export const title = style([
+  {
+    ...fontStyles.title_eb_25,
+    color: color.black100,
+  },
+  screen.mobile({
+    ...fontStyles.body_b_20,
+  }),
+]);
 
 export const button = style({
   ...fontStyles.section_r_12,

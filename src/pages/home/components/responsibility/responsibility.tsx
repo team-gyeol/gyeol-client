@@ -10,7 +10,7 @@ const Responsibility = forwardRef<HTMLDivElement>((_, ref) => {
         <p className={styles.text}>책임 소재 분명화</p>
       </div>
       <div>
-        <img src="/mac_book.png" />
+        <img src="/mac_book.png" className={styles.image} />
       </div>
     </section>
   );

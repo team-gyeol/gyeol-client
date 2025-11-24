@@ -1,15 +1,24 @@
 import { style } from "@vanilla-extract/css";
 
+import { screen } from "@shared/styles";
+
 import { color } from "@shared/styles/token/color.css";
 
-export const infoContainer = style({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "4rem 16rem 2rem 10rem",
-  gap: "3rem",
-  backgroundColor: color.white100,
-});
+export const infoContainer = style([
+  {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "4rem 16rem 2rem 10rem",
+    gap: "3rem",
+    backgroundColor: color.white100,
+  },
+  screen.mobile({
+    flexDirection: "column",
+    padding: "2rem 0",
+    gap: "5rem",
+  }),
+]);
 
 export const sectionContainer = style({
   display: "flex",
@@ -25,12 +34,17 @@ export const image = style({
   border: `2px solid ${color.border100}`,
 });
 
-export const verticalLine = style({
-  width: "0.1rem",
-  backgroundColor: color.border100,
-  margin: "2rem 6rem 2rem 0",
-  height: "8rem",
-});
+export const verticalLine = style([
+  {
+    width: "0.1rem",
+    backgroundColor: color.border100,
+    margin: "2rem 6rem 2rem 0",
+    height: "8rem",
+  },
+  screen.mobile({
+    display: "none",
+  }),
+]);
 
 export const titleContentsContainer = style({
   display: "flex",

@@ -44,10 +44,10 @@ const Header = ({ darkMode }: HeaderProps) => {
       <div className={styles.textContainer}>
         <a
           href="#start"
-          className={styles.text}
+          className={styles.logo}
           onClick={() => handleNavigate(routePath.ROOT)}
         >
-          LOGO
+          <img src="/logo.svg" />
         </a>
         <a
           href="#about"
@@ -71,14 +71,14 @@ const Header = ({ darkMode }: HeaderProps) => {
           INTRODUCE
         </a>
         <a
-          className={`${styles.text} ${styles.upload}`}
+          className={`${styles.logoLoginText} ${styles.upload}`}
           onClick={() => handleNavigate(routePath.UPLOAD)}
         >
           UPLOAD
         </a>
       </div>
       <button
-        className={styles.text}
+        className={styles.logoLoginText}
         onClick={() =>
           handleNavigate(isLoggedIn ? routePath.MY : routePath.LOGIN)
         }

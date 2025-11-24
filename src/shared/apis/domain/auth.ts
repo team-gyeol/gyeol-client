@@ -1,5 +1,5 @@
 import { END_POINT } from "../config/end-point";
-import { instance } from "../instance";
+import { instance, refreshInstance } from "../instance";
 import type { RefreshTokenRequest, RefreshTokenResponse } from "../types/auth";
 
 /**
@@ -8,7 +8,7 @@ import type { RefreshTokenRequest, RefreshTokenResponse } from "../types/auth";
 export const refreshAccessToken = async (
   request: RefreshTokenRequest,
 ): Promise<RefreshTokenResponse> => {
-  const response = await instance.post<RefreshTokenResponse>(
+  const response = await refreshInstance.post<RefreshTokenResponse>(
     END_POINT.TOKEN_REFRESH,
     request,
   );
@@ -22,4 +22,3 @@ export const refreshAccessToken = async (
 export const logout = async (): Promise<void> => {
   await instance.post(END_POINT.TOKEN_LOGOUT);
 };
-
