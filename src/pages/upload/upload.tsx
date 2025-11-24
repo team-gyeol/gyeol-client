@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { routePath } from "@router/path";
+import { useNavigate } from "react-router-dom";
 
 import {
   useAnalyzeImage,
   useAnalyzeMultipleImages,
 } from "@shared/apis/domain/image";
+import { tokenService } from "@shared/auth/token-service";
 import Layout from "@shared/components/layout/layout";
 
 import * as styles from "./upload.css";
 
 const Upload = () => {
+  const navigate = useNavigate();
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [previewUrls, setPreviewUrls] = useState<string[]>([]);
   const [isMultipleMode, setIsMultipleMode] = useState(false);
@@ -24,6 +28,14 @@ const Upload = () => {
   } = useAnalyzeMultipleImages();
 
   const isPending = isAnalyzingSingle || isAnalyzingMultiple;
+
+  useEffect(() => {
+    const isLoggedIn = tokenService.hasToken();
+    if (!isLoggedIn) {
+      alert("로그인이 가능해야 이용할 수 있는 서비스입니다.");
+      navigate(routePath.LOGIN);
+    }
+  }, [navigate]);
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files || []);
