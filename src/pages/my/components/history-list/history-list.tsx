@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 
-import Loading from "@pages/loading/loading";
 import { useDeleteImage, useGetImageList } from "@shared/apis/domain/image";
 import Spinner from "@shared/components/spinner/spinner";
 import TitleBar from "@shared/components/title-bar/title-bar";
