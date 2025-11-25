@@ -353,3 +353,24 @@ globalStyle(`${evaluationList} li strong`, {
   color: color.black300,
   fontWeight: "600",
 });
+
+export const analysisLoading = style({
+  marginTop: "1.5rem",
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "1rem",
+  padding: "2rem",
+  borderRadius: "8px",
+  border: `1px solid ${color.border100}`,
+  backgroundColor: color.white200,
+});
+
+export const analysisLoadingText = style({
+  ...fontStyles.body_b_18,
+  color: color.black200,
+  textAlign: "center",
+  lineHeight: 1.5,
+});

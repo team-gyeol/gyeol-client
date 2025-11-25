@@ -1,9 +1,11 @@
 import { useState } from "react";
+import Lottie from "lottie-react";
 
 import {
   useAnalyzeImage,
   useAnalyzeMultipleImages,
 } from "@shared/apis/domain/image";
+import loadingAnimation from "@shared/assets/drone_loading_animation.json";
 import Layout from "@shared/components/layout/layout";
 
 import * as styles from "./upload.css";
@@ -194,6 +196,21 @@ const Upload = () => {
             )}
           </div>
         </div>
+
+        {isPending && (
+          <div className={styles.analysisLoading}>
+            <Lottie
+              loop
+              autoPlay
+              animationData={loadingAnimation}
+              style={{ width: "18rem", height: "18rem" }}
+            />
+            <p className={styles.analysisLoadingText}>드론 분석중이에요!</p>
+            <p className={styles.analysisLoadingText}>
+              정확한 분석을 위해 시간이 조금 소요될 수 있어요
+            </p>
+          </div>
+        )}
 
         {/* 단일 이미지 분석 결과 */}
         {singleAnalysisResult && !isMultipleMode && (

@@ -1,0 +1,18 @@
+import { type ReactNode, Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+
+import Loading from "@pages/loading/loading";
+
+import { ErrorPage } from "./lazy";
+
+interface GlobalErrorBoundaryProps {
+  children: ReactNode;
+}
+
+export function GlobalErrorBoundary({ children }: GlobalErrorBoundaryProps) {
+  return (
+    <ErrorBoundary FallbackComponent={ErrorPage}>
+      <Suspense fallback={<Loading />}>{children}</Suspense>
+    </ErrorBoundary>
+  );
+}
