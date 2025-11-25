@@ -11,9 +11,10 @@ interface InfoProps {
   name: string;
   email: string;
   droneNumber: number;
+  userPicture: string | null;
 }
 
-const Info = ({ name, email, droneNumber }: InfoProps) => {
+const Info = ({ name, email, droneNumber, userPicture }: InfoProps) => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -39,7 +40,11 @@ const Info = ({ name, email, droneNumber }: InfoProps) => {
       <TitleBar>MY_PAGE</TitleBar>
       <section className={styles.infoContainer}>
         <div className={styles.sectionContainer}>
-          <img className={styles.image} src="/test_profile.png" />
+          {userPicture ? (
+            <img className={styles.image} src={userPicture} alt="프로필 사진" />
+          ) : (
+            <img className={styles.imagePlaceholder} src="/profile.webp" />
+          )}
           <div className={styles.titleContentsContainer}>
             <p className={styles.contents}>이름: {name}</p>
             <p className={styles.contents}>이메일: {email}</p>

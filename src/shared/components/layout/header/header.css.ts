@@ -17,7 +17,7 @@ export const headerContainer = recipe({
       justifyContent: "space-between",
       width: "100%",
       height: "8rem",
-      padding: "0 6rem",
+      padding: "0 6rem 0 4rem",
       backgroundColor: color.white100,
     },
     screen.mobile({
@@ -44,6 +44,7 @@ export const textContainer = style({
 });
 
 export const logo = style([
+  { width: "8rem" },
   screen.mobile({
     width: "5rem",
   }),

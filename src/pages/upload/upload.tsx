@@ -18,11 +18,13 @@ const Upload = () => {
     mutate: analyzeImage,
     isPending: isAnalyzingSingle,
     data: singleAnalysisResult,
+    reset: resetSingleAnalysis,
   } = useAnalyzeImage();
   const {
     mutate: analyzeMultipleImages,
     isPending: isAnalyzingMultiple,
     data: multipleAnalysisResults,
+    reset: resetMultipleAnalysis,
   } = useAnalyzeMultipleImages();
 
   const isPending = isAnalyzingSingle || isAnalyzingMultiple;
@@ -90,6 +92,9 @@ const Upload = () => {
   const handleModeToggle = () => {
     setIsMultipleMode(!isMultipleMode);
     handleReset();
+    // 모드 변경 시 분석 결과 초기화
+    resetSingleAnalysis();
+    resetMultipleAnalysis();
   };
 
   return (
@@ -218,7 +223,7 @@ const Upload = () => {
             <h2 className={styles.resultTitle}>분석 결과</h2>
             <div className={styles.resultGrid}>
               <div className={styles.resultItem}>
-                <span className={styles.resultLabel}>멀티콥터 본체:</span>
+                <span className={styles.resultLabel}>몸체:</span>
                 <span className={styles.resultValue}>
                   {singleAnalysisResult.multicopterBodyCount}개
                 </span>
@@ -241,9 +246,6 @@ const Upload = () => {
                   {singleAnalysisResult.legCount}개
                 </span>
               </div>
-            </div>
-            <div className={styles.analysisText}>
-              <p>{singleAnalysisResult.analysisResult}</p>
             </div>
             {singleAnalysisResult.segmentedImageUrl && (
               <div className={styles.segmentedImageContainer}>
@@ -292,9 +294,6 @@ const Upload = () => {
                       {result.legCount}개
                     </span>
                   </div>
-                </div>
-                <div className={styles.analysisText}>
-                  <p>{result.analysisResult}</p>
                 </div>
                 {result.segmentedImageUrl && (
                   <div className={styles.segmentedImageContainer}>
