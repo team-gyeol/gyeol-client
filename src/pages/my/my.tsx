@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { useGetImageList } from "@shared/apis/domain/image";
 import { useGetUser } from "@shared/apis/domain/my";
 import Layout from "@shared/components/layout/layout";
 
@@ -11,7 +12,10 @@ import * as styles from "./my.css";
 
 const My = () => {
   const { data: userData } = useGetUser();
+  const { data: imageListData } = useGetImageList({ page: 1, size: 1 });
   const [selectedId, setSelectedId] = useState<SelectedId>(ID.MY_INFO);
+
+  const droneCount = imageListData?.totalElements ?? 0;
 
   return (
     <Layout>
@@ -22,7 +26,8 @@ const My = () => {
             <Info
               name={userData.userName}
               email={userData.userEmail}
-              droneNumber={23}
+              droneNumber={droneCount}
+              userPicture={userData.userPicture}
             />
           )}
           {selectedId === ID.DRONE_HISTORY && <HistoryList />}

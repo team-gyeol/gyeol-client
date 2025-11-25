@@ -26,11 +26,13 @@ const Footer = forwardRef<HTMLDivElement>((_, ref) => {
         </div>
         <div className={styles.divideContainer}>
           <div className={styles.sectionContainer}>
-            <p className={styles.title}>MYONGJI UNIVERSITY · CAPSTONE DESIGN</p>
+            <p className={styles.title}>
+              MYONGJI UNIVERSITY · IC-PBL CAPSTONE DESIGN
+            </p>
             <p className={styles.contents}>PROJECT : GYEOL</p>
-            <p className={styles.contents}>PERIOD : 2025.09 ~ 2024.12</p>
+            <p className={styles.contents}>PERIOD : 2025.09 ~ 2025.12</p>
             <p className={styles.contents}>ADVISOR : 유철우 교수님</p>
-            <p className={styles.contents}>SUBJECT : 캡스톤 디자인</p>
+            <p className={styles.contents}>SUBJECT : 캡스톤 디자인2</p>
           </div>
         </div>
         <div className={styles.divideContainer}>

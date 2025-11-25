@@ -47,7 +47,7 @@ const Header = ({ darkMode }: HeaderProps) => {
           className={styles.logo}
           onClick={() => handleNavigate(routePath.ROOT)}
         >
-          <img src="/logo.svg" />
+          <img src="/logo.png" />
         </a>
         <a
           href="#about"
