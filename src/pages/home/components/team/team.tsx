@@ -8,9 +8,10 @@ const Team = forwardRef<HTMLDivElement>((_, ref) => {
       <div className={styles.infoContainer}>
         <img src="/inyong.png" className={styles.image} />
         <div className={styles.textContainer}>
-          <p className={styles.englishName}>PARK INYONG</p>
+          <p className={styles.englishName}>PARK INYEONG</p>
           <p className={styles.koreanName}>박인영</p>
           <p className={styles.role}>AI DEVELOPER</p>
+          <p className={styles.role}>PROJECT MANAGER</p>
         </div>
       </div>
       <div>
