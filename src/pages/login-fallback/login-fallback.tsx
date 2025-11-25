@@ -26,6 +26,7 @@ export const LoginCallback = () => {
       kakaoLogin(code).catch(() => {
         throw new Error("로그인에 실패하였습니다.");
       });
+      hasProcessed.current = true;
     }
   }, [location.search, kakaoLogin]);
 
